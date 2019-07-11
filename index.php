@@ -3,10 +3,10 @@ function listWrapper($content){
     echo '<li>' . $content . '.</li>';
 }
 ?>
-<h1>My List of Animals</h1>
+<h1>Posts</h1>
 <ul>
-<? foreach($animals as $animal) : ?>
-    <li><?= $animal ?></li>
+<? foreach($posts as $post) : ?>
+    <li><?= $post-> post_title ?></li>
 <? endforeach ?>
 </ul>
 
