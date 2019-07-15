@@ -5,9 +5,10 @@ function listWrapper($content){
 ?>
 <h1>Posts</h1>
 <ul>
-<? foreach($posts as $post) : ?>
-    <li><?= $post-> post_title ?></li>
-<? endforeach ?>
+    <? while(have_posts()): the_post();?>
+        <li><? the_title()?></li>
+            <? the_content()?>
+    <? endwhile ?>
 </ul>
 
 
