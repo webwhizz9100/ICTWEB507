@@ -8,3 +8,40 @@ Version: 1.0
 License: GNU General Public License v2 or later
 
 */
+body{
+    /* background: yellow; */
+    font-family: arial;
+    }
+    .row {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        flex-wrap: wrap;
+
+    }
+  
+    .column {
+        
+        flex: 1;
+        padding: 1em;
+        flex-basis: 400px;
+
+    }
+    .column img {
+        width: 100%;
+        height: auto;
+        }
+ 
+    .card {
+        box-shadow: 0 0 4px 0 #00000050;
+        padding: 3em;
+        display:flex;
+        flex-direction: column;
+    }
+    .card_title{
+        margin: 0;
+    }
+    .card_img{
+        order: -1;
+        margin: -1em -1em 1em;
+    }
