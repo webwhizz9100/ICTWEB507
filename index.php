@@ -12,13 +12,11 @@ function listWrapper($content){
         <h1>Posts</h1>
         <div class="container">
             <div class="row">
- 
                     <? while(have_posts()): the_post();?>
                     <div class="col-sm">
                         <div class="card" style="width: 18rem;">
-                            <img src="https://via.placeholder.com/150
-
-C/O https://placeholder.com/" class="card-img-top" alt="...">
+                            <!-- <img src="<?php the_post_thumbnail()?>" class="card-img-top" alt="..."> -->
+                            <?php the_post_thumbnail('thumbnail',['class' =>'card-img-top']) ;?>
                             <div class="card-body">
                                 <h5 class="card-title"><?php the_title()?></h5>
                                 <p class="card-text"><?php the_excerpt()?></p>
