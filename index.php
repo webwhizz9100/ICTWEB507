@@ -10,19 +10,25 @@ function listWrapper($content){
     </head>
     <body>
         <h1>Posts</h1>
-            <ul class="row">
-                <? while(have_posts()): the_post();?>
-                    <li class="column">
-                        <article class="card">
-                            <small><?php echo get_the_date()?></small>
-                                <h2><? the_title()?></h2>
-                                <?php the_post_thumbnail('thumbnail');?>
-                                <?php the_excerpt() ?> 
-                                <a href="<?php the_permalink() ?>" >Read More</a>
-                        </article>
-                    </li>
+        <div class="container">
+            <div class="row">
+ 
+                    <? while(have_posts()): the_post();?>
+                    <div class="col-sm">
+                        <div class="card" style="width: 18rem;">
+                            <img src="https://via.placeholder.com/150
+
+C/O https://placeholder.com/" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title"><?php the_title()?></h5>
+                                <p class="card-text"><?php the_excerpt()?></p>
+                                <a href="#" class="btn btn-primary">Read Moer</a>
+                            </div>
+                        </div>
+                    </div> 
                 <? endwhile ?>
-            </ul>
+        </div>
+</div>
     </body>
 </html>
 
