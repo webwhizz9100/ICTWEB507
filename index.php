@@ -1,21 +1,29 @@
+<!-- <?php
+function listWrapper($content){
+    echo '<li>' . $content . '.</li>';
+}
+?> -->
 <html>
     <head>
-        <title>Foo_Knews | Bizzare news for outer planet</title>
+        <title>foo_knews</title>
+        <link rel="stylesheet" href="<?php echo get_stylesheet_uri()?>" media="screen">
     </head>
-            <body>
-                <h1>Latest News</h1>
-                    <ul class="grid">
-                        <?php while(have_posts()): the_post(); ?>
-                                        <li class="grid-item">
-                                            <article class="card">
-                                                <h1><?php the_title()?></h1>
-                                                <?php the_post_thumbnail('thumbnail');?>
-                                                    <?php the_excerpt()?>
-                                                    <a href="<?php the_permalink()?>">Read More</a>                                           
-                                            </article>
-                                        </li>
-                        <?php endwhile ?>
-                    </ul>
-            </body>
+    <body>
+        <h1>Posts</h1>
+            <ul class="row">
+                <? while(have_posts()): the_post();?>
+                    <li class="column">
+                        <article class="card">
+                            <small><?php echo get_the_date()?></small>
+                                <h2><? the_title()?></h2>
+                                <?php the_post_thumbnail('thumbnail');?>
+                                <?php the_excerpt() ?> 
+                                <a href="<?php the_permalink() ?>" >Read More</a>
+                        </article>
+                    </li>
+                <? endwhile ?>
+            </ul>
+    </body>
 </html>
-        
+
+
