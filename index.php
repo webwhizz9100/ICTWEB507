@@ -1,33 +1,37 @@
-<!-- <?php
-function listWrapper($content){
-    echo '<li>' . $content . '.</li>';
-}
-?> -->
+<?php the_post() ?>
 <html>
-    <head>
-        <title>foo_knews</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"
-    </head>
-    <body>
-        <h1>Posts</h1>
-        <div class="container">
-            <div class="row">
-                    <? while(have_posts()): the_post();?>
-                    <div class="col-sm">
-                        <div class="card" style="width: 18rem;">
-                            <!-- <img src="<?php the_post_thumbnail()?>" class="card-img-top" alt="..."> -->
-                            <?php the_post_thumbnail('thumbnail',['class' =>'card-img-top']) ;?>
-                            <div class="card-body">
-                                <h5 class="card-title"><?php the_title()?></h5>
-                                <p class="card-text"><?php the_excerpt()?></p>
-                                <a href="#" class="btn btn-primary">Read Moer</a>
-                            </div>
-                        </div>
-                    </div> 
-                <? endwhile ?>
+
+
+<head>
+    <title><?php the_title() ?></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="<?php print get_stylesheet_uri()?>">
+
+</head>
+
+<body>
+    
+    
+    <div class="foo-banner position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center" style="background-image: url(<?php the_post_thumbnail_url() ?>)">
+        <div class="col-md-5 p-lg-5 mx-auto my-5">
+            <h1 class="display-4 font-weight-normal"><?php the_title() ?></h1>
+            <p class="lead font-weight-normal"><?php the_excerpt() ?></p>
+            <a class="btn btn-outline-secondary" href="#content">Read More</a>
         </div>
-</div>
-    </body>
+    </div>
+
+    <div class="container" id="content" >
+        <div class="row">
+            <div class="col-sm">
+                LOGO
+            </div>
+            <div class="col-sm">
+            <?php wp_nav_menu()?>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
 </html>
-
-
